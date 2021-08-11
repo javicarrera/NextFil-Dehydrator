@@ -48,26 +48,26 @@
 // NEXTION
 // ------------------------------------------------
 #ifdef NEXTION
-#include <SoftwareSerial.h>     //Para no usar el mismo SERIAL que el programador del arduino usamos SoftwareSerial
-#include "EasyNextionLibrary.h" //https://www.arduino.cc/reference/en/libraries/easy-nextion-library/
-#include "trigger.h"            //EasyNextionLibrary
+  #include <SoftwareSerial.h>     //Para no usar el mismo SERIAL que el programador del arduino usamos SoftwareSerial
+  #include "EasyNextionLibrary.h" //https://www.arduino.cc/reference/en/libraries/easy-nextion-library/
+  #include "trigger.h"            //EasyNextionLibrary
 
-/*Arduino mini pro 7 -> nextion TX   13-> Nextion RX*/
-SoftwareSerial nxSerial(NEXTION_TX_PIN, NEXTION_RX_PIN);
-EasyNex myNex(nxSerial);              // Create an object of EasyNex class with the name < myNex >
-                                      // Set as parameter the Hardware Serial you are going to use
-uint32_t DATA_REFRESH_RATE = 1000;    // The time between each Data refresh of the page
-                                      // Depending on the needs of the project, the DATA_REFRESH_RATE can be set
-                                      // to 50ms or 100ms without a problem. In this example, we use 1000ms,
-                                      // as DHT sensor is a slow sensor and gives measurements every 2 seconds
-uint32_t pageRefreshTimer = millis(); // Timer for DATA_REFRESH_RATE
-bool newPageLoaded = false;           // true when the page is first loaded ( lastCurrentPageId != currentPageId )
+  /*Arduino mini pro 7 -> nextion TX   13-> Nextion RX*/
+  SoftwareSerial nxSerial(NEXTION_TX_PIN, NEXTION_RX_PIN);
+  EasyNex myNex(nxSerial);              // Create an object of EasyNex class with the name < myNex >
+                                        // Set as parameter the Hardware Serial you are going to use
+  uint32_t DATA_REFRESH_RATE = 1000;    // The time between each Data refresh of the page
+                                        // Depending on the needs of the project, the DATA_REFRESH_RATE can be set
+                                        // to 50ms or 100ms without a problem. In this example, we use 1000ms,
+                                        // as DHT sensor is a slow sensor and gives measurements every 2 seconds
+  uint32_t pageRefreshTimer = millis(); // Timer for DATA_REFRESH_RATE
+  bool newPageLoaded = false;           // true when the page is first loaded ( lastCurrentPageId != currentPageId )
 #endif
 
 // RGB LED Support for Adafruit NeoPixel LED driver
 // ------------------------------------------------
 #ifdef NEOPIXEL_LED
-#include <Adafruit_NeoPixel.h>
+  #include <Adafruit_NeoPixel.h>
 #endif
 
 // SETTINGS (valores por defecto)
