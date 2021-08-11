@@ -1,3 +1,12 @@
+/*
+ * Bascula.h - Funciones para el uso con la pantalla Nextion
+ * 2021 Javier Carrera Arias  
+ * All rights reserved under the library's licence
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+ */
+
 #include <Arduino.h>
 #include "HX711.h"  //Para las básculas
 #include <DHT.h>    // Sensores de temperatura y humedad
