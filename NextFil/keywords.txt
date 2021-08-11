@@ -1,0 +1,151 @@
+#############################################
+# Mapa de colores sintacticos para
+# DESHIDRATADOR DE FILAMENTO AVANZADO
+#############################################
+
+#############################################
+# Datatypes (KEYWORD1)
+#############################################
+
+EasyNex	KEYWORD1	EasyNex	DATA_TYPE
+myNex	KEYWORD1
+
+#############################################
+# Methods and Functions (KEYWORD2)
+#############################################
+
+NextionListen	KEYWORD2
+writeStr	KEYWORD2
+writeNum	KEYWORD2
+readNumber	KEYWORD2
+currentPageId	KEYWORD2
+lastCurrentPageId	KEYWORD2
+readNumberFromSerial	KEYWORD2
+RefreshCurrentPage	KEYWORD2
+save	KEYWORD2
+printSerial	KEYWORD2
+setEEPROMSettings	KEYWORD2
+
+#############################################
+# Specifies Structures (KEYWORD3)
+#############################################
+
+easyNexReadCustomCommand	KEYWORD3	easyNexReadCustomCommand	RESERVED_WORD
+trigger0	KEYWORD3	trigger0	RESERVED_WORD
+trigger1	KEYWORD3	trigger1	RESERVED_WORD
+trigger2	KEYWORD3	trigger2	RESERVED_WORD
+trigger3	KEYWORD3	trigger3	RESERVED_WORD
+trigger4	KEYWORD3	trigger4	RESERVED_WORD
+trigger5	KEYWORD3	trigger5	RESERVED_WORD
+trigger6	KEYWORD3	trigger6	RESERVED_WORD
+trigger7	KEYWORD3	trigger7	RESERVED_WORD
+trigger8	KEYWORD3	trigger8	RESERVED_WORD
+trigger9	KEYWORD3	trigger9	RESERVED_WORD
+trigger10	KEYWORD3	trigger10	RESERVED_WORD
+trigger11	KEYWORD3	trigger11	RESERVED_WORD
+trigger12	KEYWORD3	trigger12	RESERVED_WORD
+trigger13	KEYWORD3	trigger13	RESERVED_WORD
+trigger14	KEYWORD3	trigger14	RESERVED_WORD
+trigger15	KEYWORD3	trigger15	RESERVED_WORD
+trigger16	KEYWORD3	trigger16	RESERVED_WORD
+trigger17	KEYWORD3	trigger17	RESERVED_WORD
+trigger18	KEYWORD3	trigger18	RESERVED_WORD
+trigger19	KEYWORD3	trigger19	RESERVED_WORD
+trigger20	KEYWORD3	trigger20	RESERVED_WORD
+trigger21	KEYWORD3	trigger21	RESERVED_WORD
+trigger22	KEYWORD3	trigger22	RESERVED_WORD
+trigger23	KEYWORD3	trigger23	RESERVED_WORD
+trigger24	KEYWORD3	trigger24	RESERVED_WORD
+trigger25	KEYWORD3	trigger25	RESERVED_WORD
+trigger26	KEYWORD3	trigger26	RESERVED_WORD
+trigger27	KEYWORD3	trigger27	RESERVED_WORD
+trigger28	KEYWORD3	trigger28	RESERVED_WORD
+trigger29	KEYWORD3	trigger29	RESERVED_WORD
+trigger30	KEYWORD3	trigger30	RESERVED_WORD
+trigger31	KEYWORD3	trigger31	RESERVED_WORD
+trigger32	KEYWORD3	trigger32	RESERVED_WORD
+trigger33	KEYWORD3	trigger33	RESERVED_WORD
+trigger34	KEYWORD3	trigger34	RESERVED_WORD
+trigger35	KEYWORD3	trigger35	RESERVED_WORD
+trigger36	KEYWORD3	trigger36	RESERVED_WORD
+trigger37	KEYWORD3	trigger37	RESERVED_WORD
+trigger38	KEYWORD3	trigger38	RESERVED_WORD
+trigger39	KEYWORD3	trigger39	RESERVED_WORD
+trigger40	KEYWORD3	trigger40	RESERVED_WORD
+trigger41	KEYWORD3	trigger41	RESERVED_WORD
+trigger42	KEYWORD3	trigger42	RESERVED_WORD
+trigger43	KEYWORD3	trigger43	RESERVED_WORD
+trigger44	KEYWORD3	trigger44	RESERVED_WORD
+trigger45	KEYWORD3	trigger45	RESERVED_WORD
+trigger46	KEYWORD3	trigger46	RESERVED_WORD
+trigger47	KEYWORD3	trigger47	RESERVED_WORD
+trigger48	KEYWORD3	trigger48	RESERVED_WORD
+trigger49	KEYWORD3	trigger49	RESERVED_WORD
+trigger50	KEYWORD3	trigger50	RESERVED_WORD
+refreshPage0	KEYWORD3	refreshPage0	RESERVED_WORD
+refreshPage1	KEYWORD3	refreshPage1	RESERVED_WORD
+refreshPage2	KEYWORD3	refreshPage2	RESERVED_WORD
+refreshPage3	KEYWORD3	refreshPage3	RESERVED_WORD
+refreshPage4	KEYWORD3	refreshPage4	RESERVED_WORD
+refreshPage5	KEYWORD3	refreshPage5	RESERVED_WORD
+refreshPage6	KEYWORD3	refreshPage6	RESERVED_WORD
+refreshPage7	KEYWORD3	refreshPage7	RESERVED_WORD
+refreshPage8	KEYWORD3	refreshPage8	RESERVED_WORD
+refreshPage9	KEYWORD3	refreshPage9	RESERVED_WORD
+refreshPage10	KEYWORD3	refreshPage10	RESERVED_WORD
+refreshPage11	KEYWORD3	refreshPage11	RESERVED_WORD
+refreshPage12	KEYWORD3	refreshPage12	RESERVED_WORD
+refreshPage13	KEYWORD3	refreshPage13	RESERVED_WORD
+refreshPage14	KEYWORD3	refreshPage14	RESERVED_WORD
+refreshPage15	KEYWORD3	refreshPage15	RESERVED_WORD
+refreshPage16	KEYWORD3	refreshPage16	RESERVED_WORD
+refreshPage17	KEYWORD3	refreshPage17	RESERVED_WORD
+refreshPage18	KEYWORD3	refreshPage18	RESERVED_WORD
+refreshPage19	KEYWORD3	refreshPage19	RESERVED_WORD
+refreshPage20	KEYWORD3	refreshPage20	RESERVED_WORD
+refreshPage21	KEYWORD3	refreshPage21	RESERVED_WORD
+refreshPage22	KEYWORD3	refreshPage22	RESERVED_WORD
+refreshPage23	KEYWORD3	refreshPage23	RESERVED_WORD
+refreshPage24	KEYWORD3	refreshPage24	RESERVED_WORD
+refreshPage25	KEYWORD3	refreshPage25	RESERVED_WORD
+refreshPage26	KEYWORD3	refreshPage26	RESERVED_WORD
+refreshPage27	KEYWORD3	refreshPage27	RESERVED_WORD
+refreshPage28	KEYWORD3	refreshPage28	RESERVED_WORD
+refreshPage29	KEYWORD3	refreshPage29	RESERVED_WORD
+refreshPage30	KEYWORD3	refreshPage30	RESERVED_WORD
+refreshPage31	KEYWORD3	refreshPage31	RESERVED_WORD
+refreshPage32	KEYWORD3	refreshPage32	RESERVED_WORD
+refreshPage33	KEYWORD3	refreshPage33	RESERVED_WORD
+refreshPage34	KEYWORD3	refreshPage34	RESERVED_WORD
+refreshPage35	KEYWORD3	refreshPage35	RESERVED_WORD
+refreshPage36	KEYWORD3	refreshPage36	RESERVED_WORD
+refreshPage37	KEYWORD3	refreshPage37	RESERVED_WORD
+refreshPage38	KEYWORD3	refreshPage38	RESERVED_WORD
+refreshPage39	KEYWORD3	refreshPage39	RESERVED_WORD
+refreshPage40	KEYWORD3	refreshPage40	RESERVED_WORD
+refreshPage41	KEYWORD3	refreshPage41	RESERVED_WORD
+refreshPage42	KEYWORD3	refreshPage42	RESERVED_WORD
+refreshPage43	KEYWORD3	refreshPage43	RESERVED_WORD
+refreshPage44	KEYWORD3	refreshPage44	RESERVED_WORD
+refreshPage45	KEYWORD3	refreshPage45	RESERVED_WORD
+refreshPage46	KEYWORD3	refreshPage46	RESERVED_WORD
+refreshPage47	KEYWORD3	refreshPage47	RESERVED_WORD
+refreshPage48	KEYWORD3	refreshPage48	RESERVED_WORD
+refreshPage49	KEYWORD3	refreshPage49	RESERVED_WORD
+refreshPage50	KEYWORD3	refreshPage50	RESERVED_WORD
+
+PROGMEM_readAnything	KEYWORD3
+PROGMEM_getAnything	KEYWORD3
+
+#############################################
+# Constants (LITERAL1)
+#############################################
+
+ParametersType	LITERAL1	ParametersType	DATA_TYPE
+
+#############################################
+# Instances (LITERAL2)
+#############################################
+
+defaults	LITERAL2
+actSettings	LITERAL2
