@@ -7,7 +7,10 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
  */
 
+
+#include "inc/NextFilConfig.h"
 #include <Arduino.h>
+
 #include "HX711.h"  //Para las básculas
 #include <DHT.h>    // Sensores de temperatura y humedad
 #include "PID_v2.h" //https://github.com/gelraen/Arduino-PID-Library/
@@ -17,27 +20,7 @@
 #include "SerialDebug.h"     //incluir Serial_debug->.h y .cpp
 #include "Pesos.h"     //incluir Pesos->.h y .cpp
 
-// DEFINICION DE PINES - ARDUINO PRO MINI
-//#define LCD_TX    0   //SERIAL RX
-//#define LCD_RX    1   //SERIAL TX
-//#define NOT_USED  2   //interrupt capable
-#define NEOPIXEL_PIN 3 //interrupt, pwm capable
-#define ALARMA_PIN 4
-#define RELE_RESISTENCIA_PIN 5 //pwm capable
-#define RELE_VENTILADOR_PIN 6  //pwm capable
-#define NEXTION_TX_PIN 7       //SOFTWARESERIAL - NEXTION TX
-#define PESO_DATA2_PIN 8
-#define PESO_SCK2_PIN 9   //pwm capable
-#define PESO_SCK_PIN 10   //pwm capable, SPI-SS
-#define PESO_DATA_PIN 11  //pwm capable, SPI-MOSI
-#define SWITCH_PIN 12     //SPI MISO
-#define NEXTION_RX_PIN 13 //SOFTWARESERIAL - NEXTION
-//#define NOT_USED  A0
-//#define NOT_USED  A1
-#define SENSOR_INT_PIN A2
-#define SENSOR_EXT_PIN A3
-// A4 PRO MINI SDA I2C
-// A5 PRO MINI SCL I2C
+
 
 // ACTIVACIÓN DE FUNCIONES
 // ------------------------------------------------
