@@ -73,11 +73,6 @@
 #elif HEXIFY(CONFIGURATION_H_VERSION) > HEXIFY(REQUIRED_CONFIGURATION_H_VERSION)
   #error "Your Configuration.h file is for a newer version of Marlin. Upgrade Marlin or downgrade your Configuration.h."
 #endif
-#if !defined(CONFIGURATION_ADV_H_VERSION) || HEXIFY(CONFIGURATION_ADV_H_VERSION) < HEXIFY(REQUIRED_CONFIGURATION_ADV_H_VERSION)
-  #error "Your Configuration_adv.h file is for an old version of Marlin. Downgrade Marlin or upgrade your Configuration_adv.h."
-#elif HEXIFY(CONFIGURATION_ADV_H_VERSION) > HEXIFY(REQUIRED_CONFIGURATION_ADV_H_VERSION)
-  #error "Your Configuration_adv.h file is for a newer version of Marlin. Upgrade Marlin or downgrade your Configuration_adv.h."
-#endif
 #undef HEXIFY
 
 /**
@@ -85,8 +80,6 @@
  */
 #ifndef MOTHERBOARD
   #error "MOTHERBOARD is required."
-#elif !defined(X_BED_SIZE) || !defined(Y_BED_SIZE)
-  #error "X_BED_SIZE and Y_BED_SIZE are now required!"
 #elif WATCH_TEMP_PERIOD > 500
   #error "WATCH_TEMP_PERIOD now uses seconds instead of milliseconds."
 #elif DISABLED(THERMAL_PROTECTION_HOTENDS) && (defined(WATCH_TEMP_PERIOD) || defined(THERMAL_PROTECTION_PERIOD))
@@ -586,48 +579,6 @@
 #endif
 
 /**
- * Probe temp compensation requirements
- */
-
-#if ENABLED(PROBE_TEMP_COMPENSATION)
-  #if defined(PTC_PARK_POS_X) || defined(PTC_PARK_POS_Y) || defined(PTC_PARK_POS_Z)
-    #error "PTC_PARK_POS_[XYZ] is now PTC_PARK_POS (array)."
-  #elif !defined(PTC_PARK_POS)
-    #error "PROBE_TEMP_COMPENSATION requires PTC_PARK_POS."
-  #elif defined(PTC_PROBE_POS_X) || defined(PTC_PROBE_POS_Y)
-    #error "PTC_PROBE_POS_[XY] is now PTC_PROBE_POS (array)."
-  #elif !defined(PTC_PROBE_POS)
-    #error "PROBE_TEMP_COMPENSATION requires PTC_PROBE_POS."
-  #endif
-
-  #ifdef PTC_SAMPLE_START
-    constexpr auto _ptc_sample_start = PTC_SAMPLE_START;
-    constexpr decltype(_ptc_sample_start) _test_ptc_sample_start = 12.3f;
-    static_assert(_test_ptc_sample_start != 12.3f, "PTC_SAMPLE_START must be a whole number.");
-  #endif
-  #ifdef PTC_SAMPLE_RES
-    constexpr auto _ptc_sample_res = PTC_SAMPLE_RES;
-    constexpr decltype(_ptc_sample_res) _test_ptc_sample_res = 12.3f;
-    static_assert(_test_ptc_sample_res != 12.3f, "PTC_SAMPLE_RES must be a whole number.");
-  #endif
-  #ifdef BTC_SAMPLE_START
-    constexpr auto _btc_sample_start = BTC_SAMPLE_START;
-    constexpr decltype(_btc_sample_start) _test_btc_sample_start = 12.3f;
-    static_assert(_test_btc_sample_start != 12.3f, "BTC_SAMPLE_START must be a whole number.");
-  #endif
-  #ifdef BTC_SAMPLE_RES
-    constexpr auto _btc_sample_res = BTC_SAMPLE_RES;
-    constexpr decltype(_btc_sample_res) _test_btc_sample_res = 12.3f;
-    static_assert(_test_btc_sample_res != 12.3f, "BTC_SAMPLE_RES must be a whole number.");
-  #endif
-  #ifdef BTC_PROBE_TEMP
-    constexpr auto _btc_probe_temp = BTC_PROBE_TEMP;
-    constexpr decltype(_btc_probe_temp) _test_btc_probe_temp = 12.3f;
-    static_assert(_test_btc_probe_temp != 12.3f, "BTC_PROBE_TEMP must be a whole number.");
-  #endif
-#endif
-
-/**
  * Marlin release, version and default string
  */
 #ifndef SHORT_BUILD_VERSION
@@ -664,18 +615,6 @@
     #error "SERIAL_PORT_3 cannot be the same as SERIAL_PORT_2."
   #endif
 #endif
-#if !(defined(__AVR__) && defined(USBCON))
-  #if ENABLED(SERIAL_XON_XOFF) && RX_BUFFER_SIZE < 1024
-    #error "SERIAL_XON_XOFF requires RX_BUFFER_SIZE >= 1024 for reliable transfers without drops."
-  #elif RX_BUFFER_SIZE && (RX_BUFFER_SIZE < 2 || !IS_POWER_OF_2(RX_BUFFER_SIZE))
-    #error "RX_BUFFER_SIZE must be a power of 2 greater than 1."
-  #elif TX_BUFFER_SIZE && (TX_BUFFER_SIZE < 2 || TX_BUFFER_SIZE > 256 || !IS_POWER_OF_2(TX_BUFFER_SIZE))
-    #error "TX_BUFFER_SIZE must be 0 or a power of 2 between 1 and 256."
-  #endif
-#elif ANY(SERIAL_XON_XOFF, SERIAL_STATS_MAX_RX_QUEUED, SERIAL_STATS_DROPPED_RX)
-  #error "SERIAL_XON_XOFF and SERIAL_STATS_* features not supported on USB-native AVR devices."
-#endif
-
 
 /**
  * Granular software endstops (Marlin >= 1.1.7)
@@ -780,13 +719,6 @@
 #endif
 
 /**
- * Chamber Heating Options - PID vs Limit Switching
- */
-#if BOTH(PIDTEMPCHAMBER, CHAMBER_LIMIT_SWITCHING)
-  #error "To use CHAMBER_LIMIT_SWITCHING you must disable PIDTEMPCHAMBER."
-#endif
-
-/**
  * Case Light requirements
  */
 #if NEED_CASE_LIGHT_PIN
@@ -828,24 +760,23 @@
   #error "TEMP_SENSOR_REDUNDANT 1000 requires REDUNDANT_PULLUP_RESISTOR_OHMS, REDUNDANT_RESISTANCE_25C_OHMS and REDUNDANT_BETA in Configuration_adv.h."
 #endif
 
-/**
- * Test Sensor & Heater pin combos.
- * Pins and Sensor IDs must be set for each heater
- */
-#if !ANY_PIN(TEMP_0, TEMP_0_CS)
-  #error "TEMP_0_PIN or TEMP_0_CS_PIN not defined for this board."
-#elif !HAS_HEATER_0 && EXTRUDERS
-  #error "HEATER_0_PIN not defined for this board."
-#elif TEMP_SENSOR_0_IS_MAX_TC && !PIN_EXISTS(TEMP_0_CS)
-  #error "TEMP_SENSOR_0 MAX thermocouple requires TEMP_0_CS_PIN."
-#elif HAS_HOTEND && !HAS_TEMP_HOTEND && !TEMP_SENSOR_0_IS_DUMMY
-  #error "TEMP_0_PIN (required for TEMP_SENSOR_0) not defined for this board."
-#elif EITHER(HAS_MULTI_HOTEND, HEATERS_PARALLEL) && !HAS_HEATER_1
-  #error "HEATER_1_PIN is not defined. TEMP_SENSOR_1 might not be set, or the board (not EEB / EEF?) doesn't define a pin."
-#endif
+//     /**
+//  * Test Sensor & Heater pin combos.
+//  * Pins and Sensor IDs must be set for each heater
+//  */
+// #if !ANY_PIN(TEMP_0, TEMP_0_CS)
+// #error "TEMP_0_PIN or TEMP_0_CS_PIN not defined for this board."
+// #elif !HAS_HEATER_0 && EXTRUDERS
+// #error "HEATER_0_PIN not defined for this board."
+// #elif TEMP_SENSOR_0_IS_MAX_TC && !PIN_EXISTS(TEMP_0_CS)
+// #error "TEMP_SENSOR_0 MAX thermocouple requires TEMP_0_CS_PIN."
+// #elif HAS_HOTEND && !HAS_TEMP_HOTEND && !TEMP_SENSOR_0_IS_DUMMY
+// #error "TEMP_0_PIN (required for TEMP_SENSOR_0) not defined for this board."
+// #elif EITHER(HAS_MULTI_HOTEND, HEATERS_PARALLEL) && !HAS_HEATER_1
+// #error "HEATER_1_PIN is not defined. TEMP_SENSOR_1 might not be set, or the board (not EEB / EEF?) doesn't define a pin."
+// #endif
 
-
-/**
+    /**
  * Pins must be set for temp sensors, with some other feature requirements.
  */
 #if TEMP_SENSOR_CHAMBER && !PIN_EXISTS(TEMP_CHAMBER)

@@ -14,7 +14,7 @@
 #endif
 
 #ifndef pageRefresh_h
-  #include "pageRefresh.h"
+  #include "../../src/lcd/PageRefresh/PageRefresh.h"
 #endif
 
 //-------------------------------------------------------------------------

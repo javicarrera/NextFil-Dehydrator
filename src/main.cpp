@@ -7,7 +7,6 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
  */
 
-
 #include "inc/NextFilConfig.h"
 #include <Arduino.h>
 
@@ -15,12 +14,10 @@
 #include <DHT.h>    // Sensores de temperatura y humedad
 #include "PID_v2.h" //https://github.com/gelraen/Arduino-PID-Library/
 #include <EEPROM.h>
-#include "pageRefresh.h"  //incluir settings->.h y .cpp
-#include "settings.h"     //incluir settings->.h y .cpp
-#include "SerialDebug.h"     //incluir Serial_debug->.h y .cpp
-#include "Pesos.h"     //incluir Pesos->.h y .cpp
-
-
+#include "lcd/PageRefresh/PageRefresh.h"  //incluir settings->.h y .cpp
+#include "Settings/Settings.h"     //incluir settings->.h y .cpp
+#include "module/SerialDebug/SerialDebug.h"     //incluir Serial_debug->.h y .cpp
+#include "module/Weight/Weight.h"     //incluir Pesos->.h y .cpp
 
 // ACTIVACIÓN DE FUNCIONES
 // ------------------------------------------------

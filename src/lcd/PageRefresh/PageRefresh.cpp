@@ -15,8 +15,8 @@
   #include "EasyNextionLibrary.h"
 #endif
 
-#ifndef pageRefresh_h
-  #include "pageRefresh.h"
+#ifndef PageRefresh_h
+  #include "PageRefresh.h"
 #endif
 
 

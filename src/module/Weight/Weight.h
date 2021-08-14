@@ -8,8 +8,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-#ifndef PESOS_H
-#define PESOS_H
+#ifndef WEIGHT_H
+#define WEIGHT_H
 
 #if ARDUINO >= 100    
  #include "Arduino.h"
@@ -22,7 +22,7 @@
 #endif
 
 #ifndef SERIALDEBUG_H
- #include "SerialDebug.h" //Para las básculas
+ #include "../SerialDebug/SerialDebug.h" //Para las básculas
 #endif
 
 //***************************************************

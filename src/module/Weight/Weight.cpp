@@ -11,8 +11,8 @@
  *  para no hacer demasiado largo el EasyNextionLibrary.cpp. Hay tantas funciones como
  *  número de páginas en el programa de Nextion. Así es más sencillo para editar.
  */
-#ifndef Pesos_h
-  #include "Pesos.h"
+#ifndef Weight_h
+  #include "Weight.h"
 #endif
 
 // Variables importadas de serial_debug.h

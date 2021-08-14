@@ -11,9 +11,8 @@
  *  para no hacer demasiado largo el EasyNextionLibrary.cpp. Hay tantas funciones como
  *  número de páginas en el programa de Nextion. Así es más sencillo para editar.
  */
-#ifndef pageRefresh_h
-#define pageRefresh_h
-
+#ifndef PageRefresh_h
+#define PageRefresh_h
 
   //---------------------------------------
  // Funciones de refresco de pantallas - privadas  
